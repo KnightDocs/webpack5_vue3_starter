@@ -8,12 +8,8 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     CurrentUser: typeof import('./src/components/CurrentUser.vue')['default']
-    ElButton: typeof import('element-plus/es')['ElButton']
+    NotFound: typeof import('./src/components/NotFound.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-  }
-
-  export interface ComponentCustomProperties {
-    vLoading: typeof import('element-plus/es')['ElLoadingDirective']
   }
 }

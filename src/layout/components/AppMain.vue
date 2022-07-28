@@ -2,7 +2,7 @@
 
 <template>
   <div class="app-main">
-    <div class="top">组件名称：AppMain</div>
+    <div class="top">组件名称：AppMain（子路由）</div>
     <router-view></router-view>
   </div>
 </template>
