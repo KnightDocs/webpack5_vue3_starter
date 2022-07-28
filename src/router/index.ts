@@ -5,7 +5,6 @@ import Layout from '@/layout/index.vue'
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    // name: 'Layout',
     redirect: { name: 'Home' },
     component: Layout,
     children: [
@@ -21,7 +20,6 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: '/works',
-    // name: 'Layout',
     redirect: { name: 'Works' },
     component: Layout,
     children: [
@@ -37,7 +35,6 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: '/contact',
-    // name: 'Layout',
     redirect: { name: 'Contact' },
     component: Layout,
     children: [
@@ -72,6 +69,14 @@ const routes: Array<RouteRecordRaw> = [
 const router = createRouter({
   history: createWebHashHistory(),
   routes
+})
+
+router.beforeEach((to, from, next) => {
+  /* 路由发生变化修改页面title */
+  if (to.meta.title) {
+    document.title = `Eric - ${to.meta.title}`
+  }
+  next()
 })
 
 export default router
